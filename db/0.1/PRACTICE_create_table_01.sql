@@ -1,0 +1,15 @@
+DROP TABLE IF EXISTS user_info;
+
+CREATE TABLE user_info  (
+  user_id VARCHAR(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  user_name VARCHAR(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL,
+  user_gender VARCHAR(16) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL,
+  PRIMARY KEY (user_id) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Dynamic;
+
+ALTER TABLE user_info COMMENT '用户信息表';
+ALTER TABLE user_info MODIFY COLUMN user_id VARCHAR(64) COMMENT '用户ID';
+ALTER TABLE user_info MODIFY COLUMN user_name VARCHAR(64) COMMENT '用户名称';
+ALTER TABLE user_info MODIFY COLUMN user_gender VARCHAR(64) COMMENT '用户性别';
+
+ALTER TABLE user_info ADD INDEX idx_user_id(user_id);
