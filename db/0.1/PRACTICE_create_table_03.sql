@@ -1,13 +1,23 @@
-DROP TABLE IF EXISTS user_sign;
+DROP TABLE IF EXISTS base_label;
 
-CREATE TABLE user_sign  (
-  user_id VARCHAR(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  user_password VARCHAR(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL,
-  PRIMARY KEY (user_id) USING BTREE
+CREATE TABLE base_label  (
+  label_id VARCHAR(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  label_name VARCHAR(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL,
+  label_value VARCHAR(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL,
+  created_by VARCHAR(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL,
+  created_time TIMESTAMP COLLATE utf8mb4_bin NULL DEFAULT NULL,
+  updated_by VARCHAR(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL,
+  updated_time TIMESTAMP COLLATE utf8mb4_bin NULL DEFAULT NULL,
+  PRIMARY KEY (label_id) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Dynamic;
 
-ALTER TABLE user_sign COMMENT '用户账号密码表';
-ALTER TABLE user_sign MODIFY COLUMN user_id VARCHAR(64) COMMENT '用户ID';
-ALTER TABLE user_sign MODIFY COLUMN user_password VARCHAR(64) COMMENT '用户密码';
+ALTER TABLE base_label COMMENT '基础标签表';
+ALTER TABLE base_label MODIFY COLUMN label_id VARCHAR(64) COMMENT '标签D';
+ALTER TABLE base_label MODIFY COLUMN label_name VARCHAR(64) COMMENT '标签名称';
+ALTER TABLE base_label MODIFY COLUMN label_value VARCHAR(64) COMMENT '标签值';
+ALTER TABLE base_label MODIFY COLUMN created_by VARCHAR(64) COMMENT '创建人';
+ALTER TABLE base_label MODIFY COLUMN created_time VARCHAR(64) COMMENT '创建时间';
+ALTER TABLE base_label MODIFY COLUMN updated_by VARCHAR(64) COMMENT '更新人';
+ALTER TABLE base_label MODIFY COLUMN updated_time VARCHAR(64) COMMENT '更新时间';
 
-ALTER TABLE user_sign ADD INDEX idx_user_id(user_id);
+ALTER TABLE base_label ADD INDEX idx_label_id(label_id);
