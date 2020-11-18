@@ -1,0 +1,23 @@
+DROP TABLE IF EXISTS base_label;
+
+CREATE TABLE base_label  (
+  label_id VARCHAR(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  label_name VARCHAR(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL,
+  label_value VARCHAR(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL,
+  created_by VARCHAR(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL,
+  created_time TIMESTAMP COLLATE utf8mb4_bin NULL DEFAULT NULL,
+  updated_by VARCHAR(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL,
+  updated_time TIMESTAMP COLLATE utf8mb4_bin NULL DEFAULT NULL,
+  PRIMARY KEY (label_id) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Dynamic;
+
+ALTER TABLE base_label COMMENT '基础标签表';
+ALTER TABLE base_label MODIFY COLUMN label_id VARCHAR(64) COMMENT '标签D';
+ALTER TABLE base_label MODIFY COLUMN label_name VARCHAR(64) COMMENT '标签名称';
+ALTER TABLE base_label MODIFY COLUMN label_value VARCHAR(64) COMMENT '标签值';
+ALTER TABLE base_label MODIFY COLUMN created_by VARCHAR(64) COMMENT '创建人';
+ALTER TABLE base_label MODIFY COLUMN created_time VARCHAR(64) COMMENT '创建时间';
+ALTER TABLE base_label MODIFY COLUMN updated_by VARCHAR(64) COMMENT '更新人';
+ALTER TABLE base_label MODIFY COLUMN updated_time VARCHAR(64) COMMENT '更新时间';
+
+ALTER TABLE base_label ADD INDEX idx_label_id(label_id);
