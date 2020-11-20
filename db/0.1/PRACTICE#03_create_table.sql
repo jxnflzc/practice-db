@@ -16,8 +16,8 @@ ALTER TABLE base_label MODIFY COLUMN label_id VARCHAR(64) COMMENT '标签D';
 ALTER TABLE base_label MODIFY COLUMN label_name VARCHAR(64) COMMENT '标签名称';
 ALTER TABLE base_label MODIFY COLUMN label_value VARCHAR(64) COMMENT '标签值';
 ALTER TABLE base_label MODIFY COLUMN created_by VARCHAR(64) COMMENT '创建人';
-ALTER TABLE base_label MODIFY COLUMN created_time VARCHAR(64) COMMENT '创建时间';
+ALTER TABLE base_label MODIFY COLUMN created_time TIMESTAMP COMMENT '创建时间';
 ALTER TABLE base_label MODIFY COLUMN updated_by VARCHAR(64) COMMENT '更新人';
-ALTER TABLE base_label MODIFY COLUMN updated_time VARCHAR(64) COMMENT '更新时间';
+ALTER TABLE base_label MODIFY COLUMN updated_time TIMESTAMP COMMENT '更新时间';
 
 ALTER TABLE base_label ADD INDEX idx_label_id(label_id);
