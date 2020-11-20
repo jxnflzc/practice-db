@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
-    <file url="file://$PROJECT_DIR$/db/0.1/PRACTICE_alter_table_06.sql" dialect="MySQL" />
-    <file url="file://$PROJECT_DIR$/db/0.1/PRACTICE_create_table_01.sql" dialect="MySQL" />
-    <file url="file://$PROJECT_DIR$/db/0.1/PRACTICE_create_table_02.sql" dialect="MySQL" />
-    <file url="file://$PROJECT_DIR$/db/0.1/PRACTICE_create_table_03.sql" dialect="MySQL" />
-    <file url="file://$PROJECT_DIR$/db/0.1/PRACTICE_insert_table_04.sql" dialect="MySQL" />
-    <file url="file://$PROJECT_DIR$/db/0.1/PRACTICE_insert_table_05.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/db/0.1/PRACTICE#01_create_table.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/db/0.1/PRACTICE#02_create_table.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/db/0.1/PRACTICE#03_create_table.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/db/0.1/PRACTICE#04_insert_table.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/db/0.1/PRACTICE#05_insert_table.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/db/0.1/PRACTICE#06_alter_table.sql" dialect="MySQL" />
   </component>
 </project>
