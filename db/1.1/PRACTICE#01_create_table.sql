@@ -1,0 +1,26 @@
+DROP TABLE IF EXISTS notice;
+
+CREATE TABLE notice (
+  notice_id VARCHAR(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  notice_title VARCHAR(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  notice_content TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  notice_level VARCHAR(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  created_by VARCHAR(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL,
+  created_time TIMESTAMP COLLATE utf8mb4_bin NULL DEFAULT NULL,
+  updated_by VARCHAR(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL,
+  updated_time TIMESTAMP COLLATE utf8mb4_bin NULL DEFAULT NULL,
+  PRIMARY KEY (notice_id) USING BTREE,
+  UNIQUE KEY id (notice_id) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Dynamic;
+
+ALTER TABLE notice COMMENT '公告通知表';
+ALTER TABLE notice MODIFY COLUMN notice_id VARCHAR(64) COMMENT '通知ID';
+ALTER TABLE notice MODIFY COLUMN notice_title VARCHAR(64) COMMENT '通知标题';
+ALTER TABLE notice MODIFY COLUMN notice_content TEXT COMMENT '通知内容';
+ALTER TABLE notice MODIFY COLUMN notice_level VARCHAR(64) COMMENT '通知级别';
+ALTER TABLE notice MODIFY COLUMN created_by VARCHAR(64) COMMENT '创建人';
+ALTER TABLE notice MODIFY COLUMN created_time TIMESTAMP COMMENT '创建时间';
+ALTER TABLE notice MODIFY COLUMN updated_by VARCHAR(64) COMMENT '更新人';
+ALTER TABLE notice MODIFY COLUMN updated_time TIMESTAMP COMMENT '更新时间';
+
+ALTER TABLE notice ADD INDEX idx_notice_id(notice_id);
